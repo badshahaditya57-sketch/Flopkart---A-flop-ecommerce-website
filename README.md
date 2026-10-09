@@ -2,7 +2,7 @@
 
 > A deliberately terrible, fully working online store built for a web development competition (theme: *"Design the most hilariously terrible online shopping experience imaginable, while keeping it functional enough for users to explore"*).
 
-**Live demo:** [`(https://classy-zuccutto-d70640.netlify.app/` ]*(replace after deploying)*
+**Live demo:** [`(https://classy-zuccutto-d70640.netlify.app/)`]*(replace after deploying)*
 
 > **Content notice:** the site contains crude humour and swearing in its final "roast" screen and one popup. See [Customization](#customization) for a family-friendly option.
 
