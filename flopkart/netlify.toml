@@ -1,0 +1,20 @@
+# Netlify settings for FlopKart (static site in /public + one serverless function)
+[build]
+  publish   = "public"
+  command   = ""                      # no build step needed
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+
+# The frontend calls /api/checkout; map it to the Netlify function
+[[redirects]]
+  from   = "/api/checkout"
+  to     = "/.netlify/functions/checkout"
+  status = 200
+  force  = true
+
+[[headers]]
+  for = "/*.mp3"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
