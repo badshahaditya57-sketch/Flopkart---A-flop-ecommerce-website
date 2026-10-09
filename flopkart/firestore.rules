@@ -1,0 +1,18 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /regrets/{id} {
+      allow read: if true;
+      allow create: if request.resource.data.keys().hasOnly(['who','text','ts'])
+        && request.resource.data.who is string && request.resource.data.who.size() <= 30
+        && request.resource.data.text is string && request.resource.data.text.size() <= 240;
+      allow update, delete: if false;
+    }
+    match /stats/global {
+      allow read: if true;
+      allow create: if request.resource.data.keys().hasOnly(['fails']) && request.resource.data.fails == 1;
+      allow update: if request.resource.data.keys().hasOnly(['fails']) && request.resource.data.fails == resource.data.fails + 1;
+      allow delete: if false;
+    }
+  }
+}

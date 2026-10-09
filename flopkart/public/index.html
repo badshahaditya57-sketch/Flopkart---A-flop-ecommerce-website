@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FlopKart – India's Most Slightly Functional Online Store</title>
+<link rel="stylesheet" href="style.css"></head>
+<body>
+<div class="marquee"><span>🔥 MEGA SALE ENDS IN -3 DAYS 🔥 FREE DELIVERY* (*delivery not included) 🔥 PRICES FALL UPWARDS 🔥</span></div>
+<header>
+  <h1 id="logo">FlopKart</h1>
+  <form id="search"><input id="q" placeholder="Search for anything you won't find" aria-label="Search"><button>Search?</button></form>
+  <select id="sort" aria-label="Sort"><option value="">Sort: Price (high to higher)</option><option value="up">Price (higher to highest)</option><option value="rnd">Randomly</option><option value="mood">Alphabetical (by mood)</option></select>
+  <button id="dontpress">🚫 DO NOT PRESS</button><button id="spin">🎰 Spin to WIN</button><button id="track">📦 Track order</button>
+  <button id="cartBtn">🛒 Cart: <span id="count">0</span></button>
+</header>
+<p class="note" id="msg">Showing 8 products. Probably.</p>
+<p class="note" id="stat">🚨 Loading the number of people who failed here…</p>
+<main id="grid"></main>
+<section class="wall"><h2>🏛️ Hall of Regret</h2>
+  <form id="regretForm"><input id="who" placeholder="Your name (we'll misspell it)" maxlength="30">
+  <textarea id="regret" maxlength="240" placeholder="Describe your suffering…" required></textarea>
+  <button>Submit suffering</button></form><ul id="regrets"></ul></section>
+<footer>Product names and links point to the original Flipkart listings. Seller names shown on FlopKart are fictional jokes. FlopKart is a parody, not affiliated with Flipkart, Apple, Samsung, Motorola or vivo.</footer>
+
+<aside id="drawer" hidden><h2>Your Cart <button id="closeCart" aria-label="Close">✖</button></h2>
+  <ul id="cartList"></ul><p id="total"></p><button id="checkout">Proceed to Panic</button></aside>
+
+<dialog id="dlg"><div id="dlgBody"></div><button id="dlgClose">OK, fine</button></dialog>
+<div id="cookie">🍪 We use cookies to eat them. <button id="acc">ACCEPT EVERYTHING</button> <small id="dec">decline</small></div>
+<button id="bot" aria-label="Support chat">💬 Bholu Support</button>
+<div id="toast" role="status"></div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script src="products.js"></script><script src="blast-data.js"></script><script src="app.js"></script>
+</body></html>
